@@ -15,7 +15,7 @@
 #------------------------------------------------------------------------------------------------------
 
 # Basic imports for the game
-import os,sys,datetime
+import os,sys,datetime, sqlite3
 import pygame
 # I don't believe that I need the time references anymore, to be removed with next commit
 #from time import strftime, localtime
@@ -23,9 +23,9 @@ from random import randint
 from pygame.locals import *
 
 # Setup basic constants
-
+test = 640
 # Screen height and width
-SCREEN_WIDTH = 640
+SCREEN_WIDTH = test
 SCREEN_HEIGHT = 480
 
 #CENTER_POINT = (SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
@@ -136,9 +136,9 @@ def main():
                 if keys[K_ESCAPE] and keys[K_LCTRL]:
                     pygame.quit()
                     sys.exit()
-		elif keys[K_ESCAPE]:
-		    resetScreen = True;
-		    playsound(soundFiles[1])
+                elif keys[K_ESCAPE]:
+                    resetScreen = True;
+                    playsound(soundFiles[1])
                 else:
                     updateScreen = True
                     playsound(soundFiles[0])
@@ -150,12 +150,12 @@ def main():
             pygame.display.update()
 
         if updateScreen:
-	    if drawCircle:
-		drawMyCircle(background)
-	    else:
-		drawMyRect(background)
+            if drawCircle:
+                drawMyCircle(background)
+            else:
+                drawMyRect(background)
 
-	    drawCircle = not drawCircle
+            drawCircle = not drawCircle
             screen.blit(background, (0,0))
             pygame.display.update()
 
