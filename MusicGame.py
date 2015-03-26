@@ -9,6 +9,9 @@
 #   will be included when it is finished.
 # Change log:
 #       4.30.15 - Updated the header to test out Visual Studio Code git integration
+#       9.18.15 - Started making some changes to the application.  Natalie is starting to enjoy
+#                   the application so I'm starting to make it do more:
+#               - Updated the code to put circles as well as squares on the screen.
 #------------------------------------------------------------------------------------------------------
 
 # Basic imports for the game
@@ -35,6 +38,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 MATRIX_GREEN = (0, 255, 21)
 
 # Code taken from: http://code.activestate.com/recipes/521884-play-sound-files-with-pygame-in-a-cross-platform-m/
@@ -79,7 +83,7 @@ def drawMyRect(surface):
     return surface
 
 def drawMyCircle(surface):
-    pygame.draw.circle(surface, GREEN, (randint(0,600), randint(0,440)), 40, 5)
+    pygame.draw.circle(surface, GREEN, (randint(0,600), randint(0,440)), 20, 5)
     return surface 
 
 def main():
