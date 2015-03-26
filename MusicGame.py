@@ -7,6 +7,8 @@
 #   displays a simple shape pattern on the screen with each keypress.  The pi can also be setup to
 #   allow users to change the sounds by uploading them to a web form on the pi itself.  This code
 #   will be included when it is finished.
+# Change log:
+#       4.30.15 - Updated the header to test out Visual Studio Code git integration
 #------------------------------------------------------------------------------------------------------
 
 # Basic imports for the game
@@ -83,6 +85,7 @@ def drawMyCircle(surface):
 def main():
     pygame.mixer.pre_init(44100,-16,2, 1024)
     pygame.init()
+    
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption('Music Game')
 
@@ -136,15 +139,6 @@ def main():
                     updateScreen = True
                     playsound(soundFiles[0])
 
-                #elif event.type == KEYDOWN and event.key == K_ESCAPE:
-                #pygame.quit()
-                #sys.exit()
-                #return
-            #elif event.type == KEYDOWN and event.key == K_RETURN:
-            	#playsound(sounds[1])
-            #elif event.type == KEYDOWN:
-            	#playsound(soundFiles[0])
-            	#print(event.key)
         if resetScreen:
             background = pygame.Surface(screen.get_size())
             background = background.convert()
