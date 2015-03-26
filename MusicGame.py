@@ -76,10 +76,17 @@ def drawMyRect(surface):
     pygame.draw.rect(surface, RED, (randint(0,600), randint(0,440), 40,40), 5)
     return surface
 
+def drawMyCircle(surface):
+    pygame.draw.circle(surface, GREEN, (randint(0,600), randint(0,440)), 40, 5)
+    return surface 
+
 def main():
+    pygame.mixer.pre_init(44100,-16,2, 1024)
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption('Music Game')
+
+    drawCircle = True
 
     # create background
     background = pygame.Surface(screen.get_size())
@@ -122,406 +129,14 @@ def main():
                 if keys[K_ESCAPE] and keys[K_LCTRL]:
                     pygame.quit()
                     sys.exit()
-                if keys[K_BACKSPACE]:
+		elif keys[K_ESCAPE]:
+		    resetScreen = True;
+		    playsound(soundFiles[1])
+                else:
                     updateScreen = True
                     playsound(soundFiles[0])
-                if keys[K_TAB]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_CLEAR]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RETURN]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PAUSE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_ESCAPE]:
-                    resetScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_SPACE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_EXCLAIM]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_QUOTEDBL]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_HASH]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_DOLLAR]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_AMPERSAND]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_QUOTE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LEFTPAREN]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RIGHTPAREN]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_ASTERISK]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PLUS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_COMMA]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_MINUS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PERIOD]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_SLASH]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_0]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_1]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_2]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_3]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_4]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_5]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_6]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_7]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_8]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_9]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_COLON]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_SEMICOLON]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LESS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_EQUALS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_GREATER]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_QUESTION]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_AT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LEFTBRACKET]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_BACKSLASH]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RIGHTBRACKET]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_CARET]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_UNDERSCORE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_BACKQUOTE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_a]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_b]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_c]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_d]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_e]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_f]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_g]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_h]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_i]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_j]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_k]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_l]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_m]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_n]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_o]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_p]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_q]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_r]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_s]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_t]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_u]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_v]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_w]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_x]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_y]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_z]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_DELETE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP0]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP1]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP2]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP3]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP4]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP5]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP6]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP7]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP8]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP9]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_PERIOD]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_DIVIDE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_MULTIPLY]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_MINUS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_PLUS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_ENTER]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_KP_EQUALS]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_UP]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_DOWN]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RIGHT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LEFT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_INSERT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_HOME]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_END]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PAGEUP]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PAGEDOWN]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F1]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F2]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F3]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F4]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F5]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F6]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F7]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F8]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F9]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F10]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F11]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F12]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F13]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F14]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_F15]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_NUMLOCK]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_CAPSLOCK]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_SCROLLOCK]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RSHIFT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LSHIFT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RCTRL]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LCTRL]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RALT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LALT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RMETA]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LMETA]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_LSUPER]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_RSUPER]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_MODE]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_HELP]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_PRINT]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_SYSREQ]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_BREAK]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_MENU]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_POWER]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-                if keys[K_EURO]:
-                    updateScreen = True
-                    playsound(soundFiles[0])
-            #elif event.type == KEYDOWN and event.key == K_ESCAPE:
+
+                #elif event.type == KEYDOWN and event.key == K_ESCAPE:
                 #pygame.quit()
                 #sys.exit()
                 #return
@@ -537,7 +152,12 @@ def main():
             pygame.display.update()
 
         if updateScreen:
-            drawMyRect(background)
+	    if drawCircle:
+		drawMyCircle(background)
+	    else:
+		drawMyRect(background)
+
+	    drawCircle = not drawCircle
             screen.blit(background, (0,0))
             pygame.display.update()
 
