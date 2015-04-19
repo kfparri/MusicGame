@@ -521,15 +521,7 @@ def main():
                 if keys[K_EURO]:
                     updateScreen = True
                     playsound(soundFiles[0])
-            #elif event.type == KEYDOWN and event.key == K_ESCAPE:
-                #pygame.quit()
-                #sys.exit()
-                #return
-            #elif event.type == KEYDOWN and event.key == K_RETURN:
-            	#playsound(sounds[1])
-            #elif event.type == KEYDOWN:
-            	#playsound(soundFiles[0])
-            	#print(event.key)
+            
         if resetScreen:
             background = pygame.Surface(screen.get_size())
             background = background.convert()
