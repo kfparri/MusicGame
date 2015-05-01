@@ -7,6 +7,8 @@
 #   displays a simple shape pattern on the screen with each keypress.  The pi can also be setup to
 #   allow users to change the sounds by uploading them to a web form on the pi itself.  This code
 #   will be included when it is finished.
+# Change log:
+#       4.30.15 - Updated the header to test out Visual Studio Code git integration
 #------------------------------------------------------------------------------------------------------
 
 # Basic imports for the game
