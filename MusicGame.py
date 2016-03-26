@@ -113,7 +113,11 @@ def main():
     #drawMyRect(background)
 
     screen.blit(background, (0,0))
-    pygame.display.update()
+    pygame.display.update()    
+
+    soundfile = "Typewrit-Intermed-538_hifi.ogg"
+    soundfile3 = "Typewrit-Bell-Patrick-8344_hifi.ogg"
+        
     # main loop
     while 1:
         # This needs to change to match the new way of checking that I found on the web
@@ -121,8 +125,7 @@ def main():
         updateScreen = False
         resetScreen = False
 
-        soundfile = "Typewrit-Intermed-538_hifi.ogg"
-        soundfile3 = "Typewrit-Bell-Patrick-8344_hifi.ogg"
+
 
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -138,10 +141,12 @@ def main():
                     sys.exit()
                 elif keys[K_ESCAPE]:
                     resetScreen = True;
-                    playsound(soundFiles[1])
+                    soundFiles[1].play()
+                    #playsound(soundFiles[1])
                 else:
                     updateScreen = True
-                    playsound(soundFiles[0])
+                    soundFiles[0].play()
+                    #playsound(soundFiles[0])
 
         if resetScreen:
             background = pygame.Surface(screen.get_size())
